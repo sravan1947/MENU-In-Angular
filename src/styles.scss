@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// some basic resets
+body {
+
+    padding :0;
+    margin: 0;
+    font-family: Robot,sans-serif;
+}
+.gap{
+    margin-right:10px;
+}
+.filler
+{
+    flex: 1 1 prime;
+}
+.container
+{
+    margin :20px;
+    display:flex;
+}
