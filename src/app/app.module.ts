@@ -12,12 +12,18 @@ import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './service/dish.service';
+import { LeaderService} from './service/leader.service'
+import { PromotionService} from './service/promotion.service'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import { SigninComponent } from './signin/signin.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule, MatInputModule, MatCheckboxModule} from '@angular/material';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,8 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +44,16 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [ DishService ],
+  entryComponents: [SigninComponent],
+  providers: [ DishService,LeaderService,PromotionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

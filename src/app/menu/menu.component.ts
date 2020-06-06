@@ -10,6 +10,7 @@ import  { DishService } from '../service/dish.service';
 export class MenuComponent implements OnInit {
   dishes : Dish[];
   selectedDish: Dish;
+ 
   constructor(private dishService : DishService) {
    }
 
