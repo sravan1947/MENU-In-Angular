@@ -22,8 +22,8 @@ import { ContactComponent } from './contact/contact.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { SigninComponent } from './signin/signin.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule, MatInputModule, MatCheckboxModule} from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +38,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
