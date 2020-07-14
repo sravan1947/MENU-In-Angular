@@ -12,8 +12,8 @@ import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './service/dish.service';
-import { LeaderService} from './service/leader.service'
-import { PromotionService} from './service/promotion.service'
+import { LeaderService} from './service/leader.service';
+import { PromotionService} from './service/promotion.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -22,8 +22,13 @@ import { ContactComponent } from './contact/contact.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { SigninComponent } from './signin/signin.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatSelectModule, MatSlideToggleModule, MatProgressSpinnerModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { baseURL } from './shared/baseurl';
+import { HighlightsDirective } from './directives/highlights.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,12 +39,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    SigninComponent
+    SigninComponent,
+    HighlightsDirective
   ],
   imports: [
     BrowserModule,
     MatSelectModule,
+    HttpModule,
     MatSlideToggleModule,
+    HttpClientModule,
+    MatSliderModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -54,9 +63,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatListModule,
     AppRoutingModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [SigninComponent],
-  providers: [ DishService,LeaderService,PromotionService ],
+  providers: [ DishService,LeaderService,PromotionService, 
+    {provide: 'BaseURL', useValue: baseURL}  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
